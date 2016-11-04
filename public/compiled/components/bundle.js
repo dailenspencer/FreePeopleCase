@@ -29359,17 +29359,26 @@
 	    var _this = _possibleConstructorReturn(this, (PhoneCaseEntry.__proto__ || Object.getPrototypeOf(PhoneCaseEntry)).call(this, props));
 	
 	    _this.state = {};
+	
 	    return _this;
 	  }
 	
 	  _createClass(PhoneCaseEntry, [{
+	    key: 'handleClick',
+	    value: function handleClick() {
+	      ga('send', this.props.phoneCase);
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
 	
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'PhoneCaseEntry' },
-	        _react2.default.createElement('div', { className: 'PhoneCaseImage', style: { 'backgroundImage': this.props.phoneCase.photo } }),
+	        _react2.default.createElement('div', { className: 'PhoneCaseImage', style: { 'backgroundImage': this.props.phoneCase.photo }, onClick: function onClick() {
+	            return _this2.handleClick();
+	          } }),
 	        _react2.default.createElement(
 	          'h1',
 	          { className: 'PhoneCaseText' },
