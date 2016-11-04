@@ -1,0 +1,17 @@
+html {
+	background-color: #FFFEF9;
+	width:75%;
+	margin: 0 auto;
+	min-width: 500px;
+}
+
+#Slider {
+	margin-top:30px;
+	border: solid 1px #BCBABA;
+	height:400px;
+	width:100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+

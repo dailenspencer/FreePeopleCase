@@ -1,0 +1,9 @@
+{
+  "name": "front",
+  "version": "0.0.0",
+  "dependencies": {
+    "parallax.js": "^1.4.2",
+    "jquery": "^3.0.0"
+  },
+  "devDependencies": {}
+}
