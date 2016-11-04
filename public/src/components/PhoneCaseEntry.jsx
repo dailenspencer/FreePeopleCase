@@ -12,7 +12,12 @@ class PhoneCaseEntry extends React.Component {
   }
 
   handleClick() {
-    ga('send', this.props.phoneCase);
+    ga('send', {
+      hitType: 'event',
+      eventCategory: 'Products',
+      eventAction: 'User Clicked Product',
+      eventLabel: this.props.phoneCase.name
+    });
   }
   
   

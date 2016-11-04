@@ -29366,7 +29366,12 @@
 	  _createClass(PhoneCaseEntry, [{
 	    key: 'handleClick',
 	    value: function handleClick() {
-	      ga('send', this.props.phoneCase);
+	      ga('send', {
+	        hitType: 'event',
+	        eventCategory: 'Products',
+	        eventAction: 'User Clicked Product',
+	        eventLabel: this.props.phoneCase.name
+	      });
 	    }
 	  }, {
 	    key: 'render',
