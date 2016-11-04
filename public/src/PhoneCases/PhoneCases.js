@@ -26,7 +26,7 @@ export var PhoneCases = [
 	{
 		'name': 'In Orbit',
 		'price':'16.95',
-		'photo':"url('/src/PhoneCases/PhoneCaseImages/OuterSpaceCase.jpeg')",
+		'photo':"url('/src/PhoneCases/PhoneCaseImages/OuterSpaceCase.jpg')",
 		'type': 'signature'
 	},
 	{
@@ -147,6 +147,12 @@ export var PhoneCases = [
 		'name': 'Clear Bananas',
 		'price':'10.89',
 		'photo':"url('/src/PhoneCases/PhoneCaseImages/ClearBananas.jpg')",
+		'type': 'signature'
+	},
+	{
+		'name': 'Rocket Man On SpaceShip',
+		'price':'16.63',
+		'photo':"url('/src/PhoneCases/PhoneCaseImages/SpaceManOnRocket.jpg')",
 		'type': 'signature'
 	}
 
