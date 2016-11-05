@@ -8,8 +8,29 @@ class MainNav extends React.Component {
     this.state = {
       
     };
-}
-
+  }
+  
+  handleClick(location) {
+    switch(location) {
+      case 'Signature':
+        $('html,body').animate({
+          scrollTop: $("#Signature").offset().top},
+        1200);
+        break;
+      case 'Nature': 
+        $('html,body').animate({
+          scrollTop: $("#Nature").offset().top},
+        1200);
+        break;
+      case 'Art':
+        $('html,body').animate({
+          scrollTop: $("#Art").offset().top},
+        1200);
+        break;
+      default:
+        break;
+    }
+  }
   
   
   render() {
@@ -18,9 +39,9 @@ class MainNav extends React.Component {
           <div id="MainNavLeft">
             <h1 id="MainNavLeftHeader"> Handcrafted in America </h1>
             <div id="MainNavLeftBottom">
-              <h1> Signature </h1>
-              <h1> Art </h1>
-              <h1> Iconic </h1>
+              <h1 onClick={() => this.handleClick('Signature')}> Signature </h1>
+              <h1 onClick={() => this.handleClick('Nature')}> Nature </h1>
+              <h1 onClick={() => this.handleClick('Art')}> Art </h1>
             </div>
           </div>
           <div id="MainNavMiddle">

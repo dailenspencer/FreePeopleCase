@@ -25,7 +25,7 @@ class ProductsHolder extends React.Component {
   render() {
     var phoneCaseElements = this.createCasesElements();
     return (
-        <div className="ProductsSection">
+        <div className="ProductsSection" id={this.props.collection}>
           <h1 className="ProductsSectionHeader">{this.props.collection}</h1>
           <div className="ProductsHolder">
             {phoneCaseElements}

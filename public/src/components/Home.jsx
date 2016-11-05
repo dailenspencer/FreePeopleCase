@@ -21,8 +21,8 @@ class Home extends React.Component {
           <Navigation/>
           <Slider/>
           <ProductsSection collection={"Signature"}/>
+          <ProductsSection collection={"Nature"}/>
           <ProductsSection collection={"Art"}/>
-          <ProductsSection collection={"Iconic"}/>
         </div>
 
         

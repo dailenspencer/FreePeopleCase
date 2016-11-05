@@ -28841,8 +28841,8 @@
 	        _react2.default.createElement(_Navigation2.default, null),
 	        _react2.default.createElement(_Slider2.default, null),
 	        _react2.default.createElement(_ProductsSection2.default, { collection: "Signature" }),
-	        _react2.default.createElement(_ProductsSection2.default, { collection: "Art" }),
-	        _react2.default.createElement(_ProductsSection2.default, { collection: "Iconic" })
+	        _react2.default.createElement(_ProductsSection2.default, { collection: "Nature" }),
+	        _react2.default.createElement(_ProductsSection2.default, { collection: "Art" })
 	      );
 	    }
 	  }]);
@@ -28946,8 +28946,30 @@
 	  }
 	
 	  _createClass(MainNav, [{
+	    key: 'handleClick',
+	    value: function handleClick(location) {
+	      switch (location) {
+	        case 'Signature':
+	          $('html,body').animate({
+	            scrollTop: $("#Signature").offset().top }, 1200);
+	          break;
+	        case 'Nature':
+	          $('html,body').animate({
+	            scrollTop: $("#Nature").offset().top }, 1200);
+	          break;
+	        case 'Art':
+	          $('html,body').animate({
+	            scrollTop: $("#Art").offset().top }, 1200);
+	          break;
+	        default:
+	          break;
+	      }
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+	
 	      return _react2.default.createElement(
 	        'div',
 	        { id: 'MainNav' },
@@ -28964,18 +28986,24 @@
 	            { id: 'MainNavLeftBottom' },
 	            _react2.default.createElement(
 	              'h1',
-	              null,
+	              { onClick: function onClick() {
+	                  return _this2.handleClick('Signature');
+	                } },
 	              ' Signature '
 	            ),
 	            _react2.default.createElement(
 	              'h1',
-	              null,
-	              ' Art '
+	              { onClick: function onClick() {
+	                  return _this2.handleClick('Nature');
+	                } },
+	              ' Nature '
 	            ),
 	            _react2.default.createElement(
 	              'h1',
-	              null,
-	              ' Iconic '
+	              { onClick: function onClick() {
+	                  return _this2.handleClick('Art');
+	                } },
+	              ' Art '
 	            )
 	          )
 	        ),
@@ -29111,146 +29139,175 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-	var PhoneCases = exports.PhoneCases = [{
+	var PhoneCases = exports.PhoneCases = [
+	////////////////////////////
+	/*	    *Signature*	      */
+	////////////////////////////
+	{
 		'name': 'Marilyn Monroe',
 		'price': '19.98',
 		'photo': "url('/src/PhoneCases/PhoneCaseImages/MarilynMonroe.jpg')",
-		'type': 'signature'
+		'type': 'signature',
+		'link': ''
 	}, {
 		'name': 'Square Paint Pallete',
 		'price': '16.94',
 		'photo': "url('https://img1.etsystatic.com/108/0/13205277/il_570xN.1039351935_qoj7.jpg')",
-		'type': 'signature'
-	}, {
-		'name': 'Girl Before A Mirror - Picasso(1932)',
-		'price': '16.94',
-		'photo': "url('/src/PhoneCases/PhoneCaseImages/AGirlBeforeAMirror.jpg')",
-		'type': 'signature'
+		'type': 'signature',
+		'link': ''
 	}, {
 		'name': 'Shark Attack',
 		'price': '16.95',
 		'photo': "url('/src/PhoneCases/PhoneCaseImages/Sharks.jpg')",
-		'type': 'signature'
+		'type': 'signature',
+		'link': ''
 	}, {
 		'name': 'Lady Lucy',
 		'price': '19.99',
 		'photo': "url('/src/PhoneCases/PhoneCaseImages/LadyLucy.jpg')",
-		'type': 'signature'
+		'type': 'signature',
+		'link': ''
 	}, {
-		'name': 'Cafe Terrance At Night - Van Gogh(1888)',
-		'price': '21.99',
-		'photo': "url('https://img0.etsystatic.com/105/0/5318827/il_570xN.1046921368_54i6.jpg')",
-		'type': 'signature'
-	}, {
-		'name': 'Transparent Cacti',
-		'price': '16.95',
-		'photo': "url('/src/PhoneCases/PhoneCaseImages/TransparentCactusPlants.jpg')",
-		'type': 'signature'
-	}, {
-		'name': 'Koi In The Sea',
-		'price': '16.95',
-		'photo': "url('/src/PhoneCases/PhoneCaseImages/OceanKoiFish.jpg')",
-		'type': 'signature'
-	}, {
-		'name': 'Transparent Cactus Pots',
-		'price': '15.70',
-		'photo': "url('/src/PhoneCases/PhoneCaseImages/TransparentCactusPots.jpg')",
-		'type': 'signature'
-	}, {
-		'name': 'Pink Cactus Pots',
-		'price': '18.00',
-		'photo': "url('/src/PhoneCases/PhoneCaseImages/PinkCactusPots.jpg')",
-		'type': 'signature'
-	}, {
-		'name': 'Transparent Koi',
-		'price': '12.99',
-		'photo': "url('https://img1.etsystatic.com/129/0/11345757/il_570xN.924815577_cdlx.jpg')",
-		'type': 'signature'
-	}, {
-		'name': 'Two Woman',
-		'price': '12.99',
-		'photo': "url('/src/PhoneCases/PhoneCaseImages/TwoWoman.jpg')",
-		'type': 'signature'
-	}, {
-		'name': 'The Unknown - Vincent Van Gough(1889)',
-		'price': '10.90',
-		'photo': "url('/src/PhoneCases/PhoneCaseImages/Unkown-VanGogh.jpg')",
-		'type': 'signature'
-	}, {
-		'name': 'California Livin',
-		'price': '11.90',
-		'photo': "url('/src/PhoneCases/PhoneCaseImages/TransparentPalmTree.jpg')",
-		'type': 'signature'
-	}, {
-		'name': 'Moon Dust',
-		'price': '14.99',
-		'photo': "url('https://img1.etsystatic.com/119/2/8418477/il_570xN.1010692997_10gs.jpg')",
-		'type': 'signature'
-	}, {
-		'name': 'Falling Berries',
-		'price': '15.99',
-		'photo': "url('/src/PhoneCases/PhoneCaseImages/SolidStrawberries.jpg')",
-		'type': 'signature'
-	}, {
-		'name': 'Clear Berries',
-		'price': '15.70',
-		'photo': "url('/src/PhoneCases/PhoneCaseImages/ClearStrawberries.jpg')",
-		'type': 'signature'
-	}, {
-		'name': 'Clear Jungle Leaves',
-		'price': '10.89',
-		'photo': "url('/src/PhoneCases/PhoneCaseImages/JungleLeavesClear.jpg')",
-		'type': 'signature'
-	}, {
-		'name': 'Flower Cactus',
-		'price': '11.99',
-		'photo': "url('/src/PhoneCases/PhoneCaseImages/FlowerCactus.jpg')",
-		'type': 'signature'
-	}, {
-		'name': 'Bohemian Leaves',
-		'price': '12.99',
-		'photo': "url('/src/PhoneCases/PhoneCaseImages/BohemianLeaves.jpg')",
-		'type': 'signature'
-	}, {
-		'name': 'Boho Elephant',
-		'price': '15.95',
-		'photo': "url('/src/PhoneCases/PhoneCaseImages/BohoElephant.jpg')",
-		'type': 'signature'
-	}, {
-		'name': 'La Luna',
-		'price': '15.95',
-		'photo': "url('/src/PhoneCases/PhoneCaseImages/LaLuna.jpg')",
-		'type': 'signature'
-	}, {
-		'name': 'Clear Bananas',
-		'price': '10.89',
-		'photo': "url('/src/PhoneCases/PhoneCaseImages/ClearBananas.jpg')",
-		'type': 'signature'
+		'name': 'Hipster Alien',
+		'price': '9.99',
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/SpaceClear.jpg')",
+		'type': 'signature',
+		'link': 'https://www.etsy.com/listing/473608096/iphone-55sse-case-iphone-66s-case-clear?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=alien%20iphone%20case&ref=sr_gallery_43'
 	}, {
 		'name': 'Rocket Man On SpaceShip',
 		'price': '16.63',
 		'photo': "url('/src/PhoneCases/PhoneCaseImages/SpaceManOnRocket.jpg')",
-		'type': 'signature'
-	}
-	
-	/*
-	,
+		'type': 'signature',
+		'link': 'https://www.etsy.com/listing/462929812/space-rocket-man-iphone-7-case-samsung?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=space%20iphone%20case&ref=sc_gallery_1&plkey=8914e0e2bb31e6762ccd86ef2359c2ed34a56e5d:462929812'
+	}, {
+		'name': 'Pastel Watermelon',
+		'price': '16.73',
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/PastelWatermelon.jpg')",
+		'type': 'signature',
+		'link': 'https://www.etsy.com/listing/233241047/pastel-watermelon-iphone-7-case-samsung?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=fruit%20iphone%20case&ref=sc_gallery_6&plkey=84e831951052d6a4fc0ef70a3aa3236f2eb54457:233241047'
+	}, {
+		'name': 'Moon Dust',
+		'price': '14.99',
+		'photo': "url('https://img1.etsystatic.com/119/2/8418477/il_570xN.1010692997_10gs.jpg')",
+		'type': 'signature',
+		'link': ''
+	}, {
+		'name': 'La Luna',
+		'price': '15.95',
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/LaLuna.jpg')",
+		'type': 'signature',
+		'link': ''
+	},
+	////////////////////////////
+	/*		 *WildLife*		  */
+	////////////////////////////
 	{
-		'name':'Vintage World Map',
-		'price':'12.99',
-		'photo':"url('/src/PhoneCases/PhoneCaseImages/VintageWorldMapCopy.jpg')",
-		'type': 'signature'
-	}
-		,
+		'name': 'California Livin',
+		'price': '11.90',
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/TransparentPalmTree.jpg')",
+		'type': 'nature',
+		'link': ''
+	}, {
+		'name': 'Transparent Koi',
+		'price': '12.99',
+		'photo': "url('https://img1.etsystatic.com/129/0/11345757/il_570xN.924815577_cdlx.jpg')",
+		'type': 'nature',
+		'link': ''
+	}, {
+		'name': 'Boho Elephant',
+		'price': '15.95',
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/BohoElephant.jpg')",
+		'type': 'nature',
+		'link': ''
+	}, {
+		'name': 'Koi In The Sea',
+		'price': '16.95',
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/OceanKoiFish.jpg')",
+		'type': 'nature',
+		'link': ''
+	}, {
+		'name': 'Transparent Cacti',
+		'price': '16.95',
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/TransparentCactusPlants.jpg')",
+		'type': 'nature',
+		'link': ''
+	}, {
+		'name': 'Clear Bananas',
+		'price': '10.89',
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/ClearBananas.jpg')",
+		'type': 'nature',
+		'link': ''
+	}, {
+		'name': 'Clear Jungle Leaves',
+		'price': '10.89',
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/JungleLeavesClear.jpg')",
+		'type': 'nature',
+		'link': ''
+	}, {
+		'name': 'Transparent Cactus Pots',
+		'price': '15.70',
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/TransparentCactusPots.jpg')",
+		'type': 'nature',
+		'link': ''
+	}, {
+		'name': 'Pink Cactus Pots',
+		'price': '18.00',
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/PinkCactusPots.jpg')",
+		'type': 'nature',
+		'link': ''
+	}, {
+		'name': 'Falling Berries',
+		'price': '15.99',
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/SolidStrawberries.jpg')",
+		'type': 'nature',
+		'link': ''
+	}, {
+		'name': 'Clear Berries',
+		'price': '15.70',
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/ClearStrawberries.jpg')",
+		'type': 'nature',
+		'link': ''
+	}, {
+		'name': 'Flower Cactus',
+		'price': '11.99',
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/FlowerCactus.jpg')",
+		'type': 'nature',
+		'link': ''
+	}, {
+		'name': 'Bohemian Leaves',
+		'price': '12.99',
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/BohemianLeaves.jpg')",
+		'type': 'nature',
+		'link': ''
+	},
+	////////////////////////////
+	/*		 *Art*			  */
+	////////////////////////////
 	{
-		'name': 'In Orbit',
-		'price':'16.95',
-		'photo':"url('/src/PhoneCases/PhoneCaseImages/OuterSpaceCase.jpg')",
-		'type': 'signature'
-	}
-	*/
-	
-	];
+		'name': 'Girl Before A Mirror - Picasso(1932)',
+		'price': '16.94',
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/AGirlBeforeAMirror.jpg')",
+		'type': 'art',
+		'link': ''
+	}, {
+		'name': 'Two Woman',
+		'price': '12.99',
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/TwoWoman.jpg')",
+		'type': 'art',
+		'link': ''
+	}, {
+		'name': 'The Unknown - Vincent Van Gough(1889)',
+		'price': '10.90',
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/Unkown-VanGogh.jpg')",
+		'type': 'art',
+		'link': ''
+	}, {
+		'name': 'Cafe Terrance At Night - Van Gogh(1888)',
+		'price': '21.99',
+		'photo': "url('https://img0.etsystatic.com/105/0/5318827/il_570xN.1046921368_54i6.jpg')",
+		'type': 'art',
+		'link': ''
+	}];
 
 /***/ },
 /* 267 */
@@ -29312,7 +29369,7 @@
 	      var phoneCaseElements = this.createCasesElements();
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'ProductsSection' },
+	        { className: 'ProductsSection', id: this.props.collection },
 	        _react2.default.createElement(
 	          'h1',
 	          { className: 'ProductsSectionHeader' },
