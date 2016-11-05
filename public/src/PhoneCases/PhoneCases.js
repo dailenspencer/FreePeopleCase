@@ -2,7 +2,7 @@ export var PhoneCases = [
 	{
 		'name':'Marilyn Monroe',
 		'price':'19.98',
-		'photo': "url('https://img1.etsystatic.com/125/0/12674961/il_570xN.1005151809_8myh.jpg')",
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/MarilynMonroe.jpg')",
 		'type': 'signature'
 	},
 	{
@@ -12,21 +12,9 @@ export var PhoneCases = [
 		'type': 'signature'
 	},
 	{
-		'name':'Vintage World Map',
-		'price':'12.99',
-		'photo':"url('/src/PhoneCases/PhoneCaseImages/VintageWorldMap.jpg')",
-		'type': 'signature'
-	},
-	{
 		'name': 'Girl Before A Mirror - Picasso(1932)',
 		'price':'16.94',
-		'photo':"url('https://img0.etsystatic.com/102/0/5318827/il_570xN.1054555522_3d6c.jpg')",
-		'type': 'signature'
-	},
-	{
-		'name': 'In Orbit',
-		'price':'16.95',
-		'photo':"url('/src/PhoneCases/PhoneCaseImages/OuterSpaceCase.jpg')",
+		'photo':"url('/src/PhoneCases/PhoneCaseImages/AGirlBeforeAMirror.jpg')",
 		'type': 'signature'
 	},
 	{
@@ -157,5 +145,23 @@ export var PhoneCases = [
 	}
 
 	
+
+	/*
+	,
+	{
+		'name':'Vintage World Map',
+		'price':'12.99',
+		'photo':"url('/src/PhoneCases/PhoneCaseImages/VintageWorldMapCopy.jpg')",
+		'type': 'signature'
+	}
+
+	,
+	{
+		'name': 'In Orbit',
+		'price':'16.95',
+		'photo':"url('/src/PhoneCases/PhoneCaseImages/OuterSpaceCase.jpg')",
+		'type': 'signature'
+	}
+	*/
 
 ]

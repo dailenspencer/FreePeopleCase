@@ -65,11 +65,11 @@
 	
 	var _reactRouter = __webpack_require__(197);
 	
-	var _routes = __webpack_require__(261);
+	var _routes = __webpack_require__(260);
 	
 	var _routes2 = _interopRequireDefault(_routes);
 	
-	var _App = __webpack_require__(260);
+	var _App = __webpack_require__(261);
 	
 	var _App2 = _interopRequireDefault(_App);
 	
@@ -28700,6 +28700,44 @@
 
 	'use strict';
 	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRouter = __webpack_require__(197);
+	
+	var _reactRouter2 = _interopRequireDefault(_reactRouter);
+	
+	var _App = __webpack_require__(261);
+	
+	var _App2 = _interopRequireDefault(_App);
+	
+	var _Home = __webpack_require__(262);
+	
+	var _Home2 = _interopRequireDefault(_Home);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _react2.default.createElement(
+	  _reactRouter.Router,
+	  { history: _reactRouter2.default },
+	  _react2.default.createElement(
+	    _reactRouter.Route,
+	    { path: '/', component: _App2.default },
+	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default })
+	  )
+	);
+
+/***/ },
+/* 261 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(2);
@@ -28747,44 +28785,6 @@
 	module.exports = App;
 
 /***/ },
-/* 261 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(2);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRouter = __webpack_require__(197);
-	
-	var _reactRouter2 = _interopRequireDefault(_reactRouter);
-	
-	var _App = __webpack_require__(260);
-	
-	var _App2 = _interopRequireDefault(_App);
-	
-	var _Home = __webpack_require__(262);
-	
-	var _Home2 = _interopRequireDefault(_Home);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _react2.default.createElement(
-	  _reactRouter.Router,
-	  { history: _reactRouter2.default },
-	  _react2.default.createElement(
-	    _reactRouter.Route,
-	    { path: '/', component: _App2.default },
-	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default })
-	  )
-	);
-
-/***/ },
 /* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -28800,15 +28800,15 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _Navigation = __webpack_require__(264);
+	var _Navigation = __webpack_require__(263);
 	
 	var _Navigation2 = _interopRequireDefault(_Navigation);
 	
-	var _Slider = __webpack_require__(267);
+	var _Slider = __webpack_require__(265);
 	
 	var _Slider2 = _interopRequireDefault(_Slider);
 	
-	var _ProductsSection = __webpack_require__(270);
+	var _ProductsSection = __webpack_require__(267);
 	
 	var _ProductsSection2 = _interopRequireDefault(_ProductsSection);
 	
@@ -28853,8 +28853,7 @@
 	module.exports = Home;
 
 /***/ },
-/* 263 */,
-/* 264 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28869,7 +28868,7 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _MainNav = __webpack_require__(266);
+	var _MainNav = __webpack_require__(264);
 	
 	var _MainNav2 = _interopRequireDefault(_MainNav);
 	
@@ -28911,8 +28910,7 @@
 	module.exports = Home;
 
 /***/ },
-/* 265 */,
-/* 266 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29023,7 +29021,7 @@
 	module.exports = MainNav;
 
 /***/ },
-/* 267 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29038,11 +29036,11 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _Navigation = __webpack_require__(264);
+	var _Navigation = __webpack_require__(263);
 	
 	var _Navigation2 = _interopRequireDefault(_Navigation);
 	
-	var _PhoneCases = __webpack_require__(269);
+	var _PhoneCases = __webpack_require__(266);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -29105,8 +29103,7 @@
 	module.exports = Slider;
 
 /***/ },
-/* 268 */,
-/* 269 */
+/* 266 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29117,7 +29114,7 @@
 	var PhoneCases = exports.PhoneCases = [{
 		'name': 'Marilyn Monroe',
 		'price': '19.98',
-		'photo': "url('https://img1.etsystatic.com/125/0/12674961/il_570xN.1005151809_8myh.jpg')",
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/MarilynMonroe.jpg')",
 		'type': 'signature'
 	}, {
 		'name': 'Square Paint Pallete',
@@ -29125,19 +29122,9 @@
 		'photo': "url('https://img1.etsystatic.com/108/0/13205277/il_570xN.1039351935_qoj7.jpg')",
 		'type': 'signature'
 	}, {
-		'name': 'Vintage World Map',
-		'price': '12.99',
-		'photo': "url('/src/PhoneCases/PhoneCaseImages/VintageWorldMap.jpg')",
-		'type': 'signature'
-	}, {
 		'name': 'Girl Before A Mirror - Picasso(1932)',
 		'price': '16.94',
-		'photo': "url('https://img0.etsystatic.com/102/0/5318827/il_570xN.1054555522_3d6c.jpg')",
-		'type': 'signature'
-	}, {
-		'name': 'In Orbit',
-		'price': '16.95',
-		'photo': "url('/src/PhoneCases/PhoneCaseImages/OuterSpaceCase.jpg')",
+		'photo': "url('/src/PhoneCases/PhoneCaseImages/AGirlBeforeAMirror.jpg')",
 		'type': 'signature'
 	}, {
 		'name': 'Shark Attack',
@@ -29244,10 +29231,29 @@
 		'price': '16.63',
 		'photo': "url('/src/PhoneCases/PhoneCaseImages/SpaceManOnRocket.jpg')",
 		'type': 'signature'
-	}];
+	}
+	
+	/*
+	,
+	{
+		'name':'Vintage World Map',
+		'price':'12.99',
+		'photo':"url('/src/PhoneCases/PhoneCaseImages/VintageWorldMapCopy.jpg')",
+		'type': 'signature'
+	}
+		,
+	{
+		'name': 'In Orbit',
+		'price':'16.95',
+		'photo':"url('/src/PhoneCases/PhoneCaseImages/OuterSpaceCase.jpg')",
+		'type': 'signature'
+	}
+	*/
+	
+	];
 
 /***/ },
-/* 270 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29262,11 +29268,11 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _PhoneCaseEntry = __webpack_require__(271);
+	var _PhoneCaseEntry = __webpack_require__(268);
 	
 	var _PhoneCaseEntry2 = _interopRequireDefault(_PhoneCaseEntry);
 	
-	var _PhoneCases = __webpack_require__(269);
+	var _PhoneCases = __webpack_require__(266);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -29327,7 +29333,7 @@
 	module.exports = ProductsHolder;
 
 /***/ },
-/* 271 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

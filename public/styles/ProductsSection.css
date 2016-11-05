@@ -19,7 +19,9 @@
 
 
 .PhoneCaseEntry {
+	margin-bottom: 20px;
 	cursor: pointer;
+	border: solid 1px #BCBABA;
 }
 
 .PhoneCaseImage {
