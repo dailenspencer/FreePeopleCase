@@ -28804,13 +28804,25 @@
 	
 	var _Navigation2 = _interopRequireDefault(_Navigation);
 	
-	var _Slider = __webpack_require__(265);
+	var _Slider = __webpack_require__(264);
 	
 	var _Slider2 = _interopRequireDefault(_Slider);
 	
-	var _ProductsSection = __webpack_require__(267);
+	var _ProductsSection = __webpack_require__(266);
 	
 	var _ProductsSection2 = _interopRequireDefault(_ProductsSection);
+	
+	var _FooterPopup = __webpack_require__(268);
+	
+	var _FooterPopup2 = _interopRequireDefault(_FooterPopup);
+	
+	var _Cart = __webpack_require__(270);
+	
+	var _Cart2 = _interopRequireDefault(_Cart);
+	
+	var _ItemDisplay = __webpack_require__(271);
+	
+	var _ItemDisplay2 = _interopRequireDefault(_ItemDisplay);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -28838,11 +28850,19 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(_Navigation2.default, null),
-	        _react2.default.createElement(_Slider2.default, null),
-	        _react2.default.createElement(_ProductsSection2.default, { collection: "Signature" }),
-	        _react2.default.createElement(_ProductsSection2.default, { collection: "Nature" }),
-	        _react2.default.createElement(_ProductsSection2.default, { collection: "Art" })
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'Home' },
+	          _react2.default.createElement(_Navigation2.default, null),
+	          _react2.default.createElement(_Cart2.default, null),
+	          _react2.default.createElement(_ItemDisplay2.default, null),
+	          _react2.default.createElement(_Slider2.default, null),
+	          _react2.default.createElement(_ProductsSection2.default, { collection: "Signature" }),
+	          _react2.default.createElement(_ProductsSection2.default, { collection: "Nature" }),
+	          _react2.default.createElement(_ProductsSection2.default, { collection: "Art" })
+	        ),
+	        _react2.default.createElement(_FooterPopup2.default, null),
+	        _react2.default.createElement('div', { id: 'Blanket' })
 	      );
 	    }
 	  }]);
@@ -28868,9 +28888,15 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _MainNav = __webpack_require__(264);
+	var _MainNav = __webpack_require__(272);
 	
 	var _MainNav2 = _interopRequireDefault(_MainNav);
+	
+	var _animationHelpers = __webpack_require__(273);
+	
+	var animationHelpers = _interopRequireWildcard(_animationHelpers);
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -28893,12 +28919,36 @@
 	  }
 	
 	  _createClass(Home, [{
+	    key: 'handleNavCartClick',
+	    value: function handleNavCartClick() {
+	      animationHelpers.showElement('#Cart');
+	      animationHelpers.removeScroll();
+	      animationHelpers.dimBackground();
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+	
 	      return _react2.default.createElement(
 	        'div',
 	        { id: 'Navigation' },
-	        _react2.default.createElement('div', { id: 'HighBar' }),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'HighBar' },
+	          _react2.default.createElement(
+	            'button',
+	            { id: 'NavCartButton', onClick: function onClick() {
+	                return _this2.handleNavCartClick();
+	              } },
+	            _react2.default.createElement('img', { src: '/images/shopping-cart.png', id: 'NavCartButtonImage' }),
+	            _react2.default.createElement(
+	              'h1',
+	              { id: 'NavCartButtonHeader' },
+	              'Your Cart'
+	            )
+	          )
+	        ),
 	        _react2.default.createElement(_MainNav2.default, null)
 	      );
 	    }
@@ -28925,150 +28975,11 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var MainNav = function (_React$Component) {
-	  _inherits(MainNav, _React$Component);
-	
-	  function MainNav(props) {
-	    _classCallCheck(this, MainNav);
-	
-	    var _this = _possibleConstructorReturn(this, (MainNav.__proto__ || Object.getPrototypeOf(MainNav)).call(this, props));
-	
-	    _this.state = {};
-	    return _this;
-	  }
-	
-	  _createClass(MainNav, [{
-	    key: 'handleClick',
-	    value: function handleClick(location) {
-	      switch (location) {
-	        case 'Signature':
-	          $('html,body').animate({
-	            scrollTop: $("#Signature").offset().top }, 1200);
-	          break;
-	        case 'Nature':
-	          $('html,body').animate({
-	            scrollTop: $("#Nature").offset().top }, 1200);
-	          break;
-	        case 'Art':
-	          $('html,body').animate({
-	            scrollTop: $("#Art").offset().top }, 1200);
-	          break;
-	        default:
-	          break;
-	      }
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-	
-	      return _react2.default.createElement(
-	        'div',
-	        { id: 'MainNav' },
-	        _react2.default.createElement(
-	          'div',
-	          { id: 'MainNavLeft' },
-	          _react2.default.createElement(
-	            'h1',
-	            { id: 'MainNavLeftHeader' },
-	            ' Handcrafted in America '
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { id: 'MainNavLeftBottom' },
-	            _react2.default.createElement(
-	              'h1',
-	              { onClick: function onClick() {
-	                  return _this2.handleClick('Signature');
-	                } },
-	              ' Signature '
-	            ),
-	            _react2.default.createElement(
-	              'h1',
-	              { onClick: function onClick() {
-	                  return _this2.handleClick('Nature');
-	                } },
-	              ' Nature '
-	            ),
-	            _react2.default.createElement(
-	              'h1',
-	              { onClick: function onClick() {
-	                  return _this2.handleClick('Art');
-	                } },
-	              ' Art '
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { id: 'MainNavMiddle' },
-	          _react2.default.createElement(
-	            'h1',
-	            null,
-	            'Free People'
-	          ),
-	          _react2.default.createElement(
-	            'h2',
-	            null,
-	            'Phone Cases'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { id: 'MainNavRight' },
-	          _react2.default.createElement(
-	            'h1',
-	            { id: 'MainNavRightHeader' },
-	            'Designed For Longevity'
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { id: 'MainNavRightBottom' },
-	            _react2.default.createElement(
-	              'h1',
-	              null,
-	              'Contact Us'
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return MainNav;
-	}(_react2.default.Component);
-	
-	module.exports = MainNav;
-
-/***/ },
-/* 265 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(2);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactDom = __webpack_require__(35);
-	
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-	
 	var _Navigation = __webpack_require__(263);
 	
 	var _Navigation2 = _interopRequireDefault(_Navigation);
 	
-	var _PhoneCases = __webpack_require__(266);
+	var _PhoneCases = __webpack_require__(265);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -29131,7 +29042,7 @@
 	module.exports = Slider;
 
 /***/ },
-/* 266 */
+/* 265 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29322,7 +29233,7 @@
 	}];
 
 /***/ },
-/* 267 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29337,11 +29248,15 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _PhoneCaseEntry = __webpack_require__(268);
+	var _PhoneCaseEntry = __webpack_require__(267);
 	
 	var _PhoneCaseEntry2 = _interopRequireDefault(_PhoneCaseEntry);
 	
-	var _PhoneCases = __webpack_require__(266);
+	var _PhoneCases = __webpack_require__(265);
+	
+	var _animationHelpers = __webpack_require__(273);
+	
+	var _animationHelpers2 = _interopRequireDefault(_animationHelpers);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -29402,7 +29317,7 @@
 	module.exports = ProductsHolder;
 
 /***/ },
-/* 268 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29416,6 +29331,12 @@
 	var _reactDom = __webpack_require__(35);
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _animationHelpers = __webpack_require__(273);
+	
+	var animationHelpers = _interopRequireWildcard(_animationHelpers);
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -29439,14 +29360,19 @@
 	  }
 	
 	  _createClass(PhoneCaseEntry, [{
-	    key: 'handleClick',
-	    value: function handleClick() {
+	    key: 'handleProductClick',
+	    value: function handleProductClick() {
+	      animationHelpers.showElement($('#ItemDisplay'));
+	      animationHelpers.dimBackground();
+	      /*
+	      Send product to google analytics
 	      ga('send', {
 	        hitType: 'event',
 	        eventCategory: 'Products',
 	        eventAction: 'User Clicked Product',
 	        eventLabel: this.props.phoneCase.name
 	      });
+	      */
 	    }
 	  }, {
 	    key: 'render',
@@ -29455,10 +29381,10 @@
 	
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'PhoneCaseEntry' },
-	        _react2.default.createElement('div', { className: 'PhoneCaseImage', style: { 'backgroundImage': this.props.phoneCase.photo }, onClick: function onClick() {
-	            return _this2.handleClick();
-	          } }),
+	        { className: 'PhoneCaseEntry', onClick: function onClick() {
+	            return _this2.handleProductClick();
+	          } },
+	        _react2.default.createElement('div', { className: 'PhoneCaseImage', style: { 'backgroundImage': this.props.phoneCase.photo } }),
 	        _react2.default.createElement(
 	          'h1',
 	          { className: 'PhoneCaseText' },
@@ -29472,6 +29398,539 @@
 	}(_react2.default.Component);
 	
 	module.exports = PhoneCaseEntry;
+
+/***/ },
+/* 268 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(35);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _backendHelpers = __webpack_require__(269);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var FooterPopup = function (_React$Component) {
+	  _inherits(FooterPopup, _React$Component);
+	
+	  function FooterPopup(props) {
+	    _classCallCheck(this, FooterPopup);
+	
+	    var _this = _possibleConstructorReturn(this, (FooterPopup.__proto__ || Object.getPrototypeOf(FooterPopup)).call(this, props));
+	
+	    _this.state = {
+	      footerPopupHasBeenClosed: false
+	    };
+	    return _this;
+	  }
+	
+	  _createClass(FooterPopup, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var that = this;
+	      var footerPopupIsHidden = true;
+	      $(window).scroll(function () {
+	        that.showFooterPopup(footerPopupIsHidden);
+	        footerPopupIsHidden = false;
+	        if ($(window).scrollTop() + window.innerHeight == $(document).height()) {
+	          that.hideFooterPopup();
+	          footerPopupIsHidden = true;
+	        }
+	      });
+	    }
+	  }, {
+	    key: 'showFooterPopup',
+	    value: function showFooterPopup(footerPopupIsHidden) {
+	      if (this.state.footerPopupHasBeenClosed) {
+	        return;
+	      }
+	      if (footerPopupIsHidden) {
+	        $("#FooterPopup").animate({
+	          bottom: '0px'
+	        }, 1000);
+	      }
+	    }
+	  }, {
+	    key: 'closeFooterPopup',
+	    value: function closeFooterPopup() {
+	      $("#FooterPopup").animate({
+	        bottom: '-200px'
+	      }, 1000);
+	      this.setState({ footerPopupHasBeenClosed: true });
+	    }
+	  }, {
+	    key: 'hideFooterPopup',
+	    value: function hideFooterPopup() {
+	      $("#FooterPopup").animate({
+	        bottom: '-200px'
+	      }, 1000);
+	    }
+	  }, {
+	    key: 'handleEmailSubmission',
+	    value: function handleEmailSubmission() {
+	      if ((0, _backendHelpers.validateEmail)($('#FooterPopupEmailField').val())) {
+	        //TODO gather email subscriber
+	        this.closeFooterPopup();
+	      } else {
+	        $("#FooterPopupEmailField").css('border-color', '#FC745E');
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'FooterPopup' },
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'FooterPopupLeft' },
+	          _react2.default.createElement(
+	            'h1',
+	            null,
+	            'Do you love our cases? '
+	          ),
+	          _react2.default.createElement(
+	            'p1',
+	            null,
+	            'Subscribe to our newsletter to receive exclusive discounts on beatiful phone cases'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'FooterPopupRight' },
+	          _react2.default.createElement('input', { id: 'FooterPopupEmailField', placeholder: 'Your Email Address' }),
+	          _react2.default.createElement(
+	            'div',
+	            { id: 'FooterPopupSubscribeButton', onClick: function onClick() {
+	                return _this2.handleEmailSubmission();
+	              } },
+	            'Subscribe'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'CancelButton', onClick: function onClick() {
+	              return _this2.closeFooterPopup();
+	            } },
+	          _react2.default.createElement('img', { src: '/images/x-button.jpg' })
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return FooterPopup;
+	}(_react2.default.Component);
+	
+	module.exports = FooterPopup;
+
+/***/ },
+/* 269 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.validateEmail = validateEmail;
+	function validateEmail(email) {
+	  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	  return re.test(email);
+	}
+
+/***/ },
+/* 270 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(35);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _animationHelpers = __webpack_require__(273);
+	
+	var animationHelpers = _interopRequireWildcard(_animationHelpers);
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Cart = function (_React$Component) {
+	  _inherits(Cart, _React$Component);
+	
+	  function Cart(props) {
+	    _classCallCheck(this, Cart);
+	
+	    var _this = _possibleConstructorReturn(this, (Cart.__proto__ || Object.getPrototypeOf(Cart)).call(this, props));
+	
+	    _this.state = {};
+	    return _this;
+	  }
+	
+	  _createClass(Cart, [{
+	    key: 'handleContinueShoppingClick',
+	    value: function handleContinueShoppingClick() {
+	      animationHelpers.hideElement($('#Cart'));
+	      animationHelpers.undimBackground();
+	      animationHelpers.addScroll();
+	    }
+	  }, {
+	    key: 'handleCheckoutClick',
+	    value: function handleCheckoutClick() {
+	      //TODO : take user to checkout
+	
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'Cart' },
+	        _react2.default.createElement(
+	          'h1',
+	          { id: 'CartHeader' },
+	          'Cart'
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'CartItems' },
+	          _react2.default.createElement(
+	            'h1',
+	            null,
+	            'Items'
+	          )
+	        ),
+	        _react2.default.createElement('div', { id: 'CartItemsPricing' }),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'ContinueShopping', onClick: function onClick() {
+	              return _this2.handleContinueShoppingClick();
+	            } },
+	          'Continue Shopping'
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'Checkout', onClick: function onClick() {
+	              return _this2.handleCheckoutClick();
+	            } },
+	          'Checkout'
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Cart;
+	}(_react2.default.Component);
+	
+	module.exports = Cart;
+
+/***/ },
+/* 271 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(35);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _animationHelpers = __webpack_require__(273);
+	
+	var animationHelpers = _interopRequireWildcard(_animationHelpers);
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var ItemDisplay = function (_React$Component) {
+	  _inherits(ItemDisplay, _React$Component);
+	
+	  function ItemDisplay(props) {
+	    _classCallCheck(this, ItemDisplay);
+	
+	    var _this = _possibleConstructorReturn(this, (ItemDisplay.__proto__ || Object.getPrototypeOf(ItemDisplay)).call(this, props));
+	
+	    _this.state = {};
+	    return _this;
+	  }
+	
+	  _createClass(ItemDisplay, [{
+	    key: 'handleContinueShoppingClick',
+	    value: function handleContinueShoppingClick() {
+	      animationHelpers.hideElement('#ItemDisplay');
+	      animationHelpers.addScroll();
+	      animationHelpers.undimBackground();
+	    }
+	  }, {
+	    key: 'handleAddItemClick',
+	    value: function handleAddItemClick() {
+	      //TODO : add item to cart and change button to proceed to checkout
+	
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'ItemDisplay' },
+	        _react2.default.createElement('h1', { id: 'ItemDisplayHeader' }),
+	        _react2.default.createElement('h1', { id: 'ItemDisplayDescription' }),
+	        _react2.default.createElement('h1', { id: 'ItemDisplayPricing' }),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'ContinueShopping', onClick: function onClick() {
+	              return _this2.handleContinueShoppingClick();
+	            } },
+	          'Continue Shopping'
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'AddToCart', onClick: function onClick() {
+	              return _this2.handleAddToCartClick();
+	            } },
+	          'Add To Cart'
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return ItemDisplay;
+	}(_react2.default.Component);
+	
+	module.exports = ItemDisplay;
+
+/***/ },
+/* 272 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(35);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var MainNav = function (_React$Component) {
+	  _inherits(MainNav, _React$Component);
+	
+	  function MainNav(props) {
+	    _classCallCheck(this, MainNav);
+	
+	    var _this = _possibleConstructorReturn(this, (MainNav.__proto__ || Object.getPrototypeOf(MainNav)).call(this, props));
+	
+	    _this.state = {};
+	    return _this;
+	  }
+	
+	  _createClass(MainNav, [{
+	    key: 'handleClick',
+	    value: function handleClick(location) {
+	      switch (location) {
+	        case 'Signature':
+	          $('html,body').animate({
+	            scrollTop: $("#Signature").offset().top
+	          }, 1200);
+	          break;
+	        case 'Nature':
+	          $('html,body').animate({
+	            scrollTop: $("#Nature").offset().top
+	          }, 1200);
+	          break;
+	        case 'Art':
+	          $('html,body').animate({
+	            scrollTop: $("#Art").offset().top
+	          }, 1200);
+	          break;
+	        default:
+	          break;
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'MainNav' },
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'MainNavLeft' },
+	          _react2.default.createElement(
+	            'h1',
+	            { id: 'MainNavLeftHeader' },
+	            ' Handcrafted in America '
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { id: 'MainNavLeftBottom' },
+	            _react2.default.createElement(
+	              'h1',
+	              { onClick: function onClick() {
+	                  return _this2.handleClick('Signature');
+	                } },
+	              ' Signature '
+	            ),
+	            _react2.default.createElement(
+	              'h1',
+	              { onClick: function onClick() {
+	                  return _this2.handleClick('Nature');
+	                } },
+	              ' Nature '
+	            ),
+	            _react2.default.createElement(
+	              'h1',
+	              { onClick: function onClick() {
+	                  return _this2.handleClick('Art');
+	                } },
+	              ' Art '
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'MainNavMiddle' },
+	          _react2.default.createElement(
+	            'h1',
+	            null,
+	            'Free People'
+	          ),
+	          _react2.default.createElement(
+	            'h2',
+	            null,
+	            'Phone Cases'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'MainNavRight' },
+	          _react2.default.createElement(
+	            'h1',
+	            { id: 'MainNavRightHeader' },
+	            'Designed For Longevity'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { id: 'MainNavRightBottom' },
+	            _react2.default.createElement(
+	              'h1',
+	              null,
+	              'Contact Us'
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return MainNav;
+	}(_react2.default.Component);
+	
+	module.exports = MainNav;
+
+/***/ },
+/* 273 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.showElement = showElement;
+	exports.removeScroll = removeScroll;
+	exports.dimBackground = dimBackground;
+	exports.hideElement = hideElement;
+	exports.addScroll = addScroll;
+	exports.undimBackground = undimBackground;
+	function showElement(element) {
+	  $(element).css('display', 'inline');
+	}
+	
+	function removeScroll() {
+	  $('html, body').css({
+	    overflow: 'hidden',
+	    height: '100%'
+	  });
+	}
+	
+	function dimBackground() {
+	  $('#Blanket').css('display', 'inline');
+	}
+	
+	function hideElement(element) {
+	  $(element).css('display', 'none');
+	}
+	
+	function addScroll() {
+	  $('html, body').css({
+	    overflow: 'auto',
+	    height: 'auto'
+	  });
+	}
+	
+	function undimBackground() {
+	  $('#Blanket').css('display', 'none');
+	}
 
 /***/ }
 /******/ ]);

@@ -14,18 +14,18 @@ class MainNav extends React.Component {
     switch(location) {
       case 'Signature':
         $('html,body').animate({
-          scrollTop: $("#Signature").offset().top},
-        1200);
+          scrollTop: $("#Signature").offset().top
+        },1200);
         break;
       case 'Nature': 
         $('html,body').animate({
-          scrollTop: $("#Nature").offset().top},
-        1200);
+          scrollTop: $("#Nature").offset().top
+        },1200);
         break;
       case 'Art':
         $('html,body').animate({
-          scrollTop: $("#Art").offset().top},
-        1200);
+          scrollTop: $("#Art").offset().top
+        },1200);
         break;
       default:
         break;

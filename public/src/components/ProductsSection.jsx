@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PhoneCaseEntry from './PhoneCaseEntry';
 import {PhoneCases} from '../PhoneCases/PhoneCases.js';
+import animationHelpers from '../helpers/animationHelpers';
 class ProductsHolder extends React.Component {
   constructor(props) {
     super(props);
@@ -10,6 +11,8 @@ class ProductsHolder extends React.Component {
       
     };
   }
+
+
 
   createCasesElements() {
     var phoneCaseElements = []
