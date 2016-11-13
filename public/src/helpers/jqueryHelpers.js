@@ -28,3 +28,9 @@ export function addScroll() {
 export function undimBackground() {
 	$('#Blanket').css('display','none')
 }
+
+export function populateItemDisplayData(product) {
+	$('#ItemDisplayHeader').text(product.name);
+	// $('#ItemDisplayDescription').text('') No Description yet for products
+	$('#ItemDisplayPricing').text('Price - ' + product.price);
+}

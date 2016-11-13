@@ -15,7 +15,7 @@ class FooterPopup extends React.Component {
     $(window).scroll(function() {
        that.showFooterPopup(footerPopupIsHidden);
        footerPopupIsHidden = false;
-       if($(window).scrollTop() + window.innerHeight == $(document).height()) {
+       if($(window).scrollTop() + window.innerHeight == $(document).height() - 1) {
            that.hideFooterPopup();
            footerPopupIsHidden = true;
        }

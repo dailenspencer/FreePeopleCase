@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as animationHelpers  from '../helpers/animationHelpers';
+import { browserHistory } from 'react-router'
+import * as jqueryHelpers  from '../helpers/jqueryHelpers';
 
 class Cart extends React.Component {
   constructor(props) {
@@ -12,14 +13,16 @@ class Cart extends React.Component {
 }
   
   handleContinueShoppingClick() {
-    animationHelpers.hideElement($('#Cart'));
-    animationHelpers.undimBackground();
-    animationHelpers.addScroll();
+    jqueryHelpers.hideElement($('#Cart'));
+    jqueryHelpers.undimBackground();
+    jqueryHelpers.addScroll();
   }
 
   handleCheckoutClick() {
     //TODO : take user to checkout
-
+    browserHistory.push('/Checkout');
+    jqueryHelpers.undimBackground();
+    jqueryHelpers.addScroll();
   }
   
   render() {
@@ -35,8 +38,6 @@ class Cart extends React.Component {
           <div id="ContinueShopping" onClick={() => this.handleContinueShoppingClick()}>Continue Shopping</div>
           <div id="Checkout" onClick={() => this.handleCheckoutClick()}>Checkout</div>
         </div>
-
-        
     );
   }
 }

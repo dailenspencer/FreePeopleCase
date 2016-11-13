@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as animationHelpers  from '../helpers/animationHelpers';
+import * as jqueryHelpers  from '../helpers/jqueryHelpers';
 
 class ItemDisplay extends React.Component {
   constructor(props) {
@@ -12,9 +12,9 @@ class ItemDisplay extends React.Component {
 }
   
   handleContinueShoppingClick() {
-    animationHelpers.hideElement('#ItemDisplay');
-    animationHelpers.addScroll();
-    animationHelpers.undimBackground();
+    jqueryHelpers.hideElement('#ItemDisplay');
+    jqueryHelpers.addScroll();
+    jqueryHelpers.undimBackground();
   }
 
   handleAddItemClick() {
@@ -26,8 +26,8 @@ class ItemDisplay extends React.Component {
     return (
         <div id="ItemDisplay">
           <h1 id="ItemDisplayHeader"></h1>
-          <h1 id="ItemDisplayDescription"></h1>
           <h1 id="ItemDisplayPricing"></h1>
+          <h1 id="ItemDisplayDescription"></h1>
           <div id="ContinueShopping" onClick={() => this.handleContinueShoppingClick()}>Continue Shopping</div>
           <div id="AddToCart" onClick={() => this.handleAddToCartClick()}>Add To Cart</div>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MainNav from './MainNav';
-import * as animationHelpers from '../../helpers/animationHelpers';
+import * as jqueryHelpers from '../../helpers/jqueryHelpers';
 
 class Home extends React.Component {
   constructor(props) {
@@ -14,9 +14,9 @@ class Home extends React.Component {
 
 
   handleNavCartClick() {
-    animationHelpers.showElement('#Cart');
-    animationHelpers.removeScroll();
-    animationHelpers.dimBackground();
+    jqueryHelpers.showElement('#Cart');
+    jqueryHelpers.removeScroll();
+    jqueryHelpers.dimBackground();
   }
   
   render() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as animationHelpers  from '../helpers/animationHelpers';
+import * as jqueryHelpers  from '../helpers/jqueryHelpers';
 
 class PhoneCaseEntry extends React.Component {
   constructor(props) {
@@ -13,8 +13,9 @@ class PhoneCaseEntry extends React.Component {
   }
 
   handleProductClick() {
-    animationHelpers.showElement($('#ItemDisplay'));
-    animationHelpers.dimBackground();
+    jqueryHelpers.showElement($('#ItemDisplay'));
+    jqueryHelpers.dimBackground();
+    jqueryHelpers.populateItemDisplayData(this.props.phoneCase);
     /*
     Send product to google analytics
     ga('send', {
