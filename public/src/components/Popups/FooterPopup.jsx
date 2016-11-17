@@ -15,8 +15,8 @@ class FooterPopup extends React.Component {
     $(window).scroll(function() {
        that.showFooterPopup(footerPopupIsHidden);
        footerPopupIsHidden = false;
-       if($(window).scrollTop() + window.innerHeight == $(document).height() - 1) {
-           that.hideFooterPopup();
+       if($(window).scrollTop() + window.innerHeight == $(document).height()) {
+           that.hideFooterPopup(footerPopupIsHidden);
            footerPopupIsHidden = true;
        }
     });
@@ -40,10 +40,12 @@ class FooterPopup extends React.Component {
     this.setState({footerPopupHasBeenClosed: true})
   }
 
-  hideFooterPopup() {
-    $( "#FooterPopup" ).animate({
-      bottom: '-200px',
-    }, 1000);
+  hideFooterPopup(footerPopupIsHidden) {
+    if(!footerPopupIsHidden) {
+      $( "#FooterPopup" ).animate({
+        bottom: '-200px',
+      }, 1000);
+    }
   }
 
   handleEmailSubmission() {
